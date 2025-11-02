@@ -1,0 +1,72 @@
+# WordPress
+/uploads/*
+!/uploads/.gitkeep
+/upgrade/
+/cache/
+/backup/
+*.log
+
+# WordPress Config
+wp-config.php
+.htaccess
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Database
+*.sql
+*.sql.gz
+!mysql-init/*.sql
+
+# Dependencies
+/node_modules/
+/vendor/
+composer.lock
+package-lock.json
+
+# Build files
+/dist/
+/build/
+*.map
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Docker
+/docker/data/
+/docker/logs/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+*.egg-info/
+
+# Temporary files
+/tmp/
+*.tmp
+*.bak
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Playwright
+.playwright-mcp/
+
+# MCP
+.mcp.json
+
+# Backups
+/backups/*.sql
+/backups/*.sql.gz

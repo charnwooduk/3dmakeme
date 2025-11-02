@@ -1,0 +1,24 @@
+# Required WordPress Plugins
+#
+# Install all plugins at once with:
+# cat plugins.txt | grep -v '^#' | xargs -I {} docker exec 3dmakeme_wordpress_dev wp plugin install {} --activate --allow-root
+#
+# Or install individually:
+# docker exec 3dmakeme_wordpress_dev wp plugin install woocommerce --activate --allow-root
+
+# E-commerce
+woocommerce
+
+# Contact & Forms (if needed)
+# contact-form-7
+
+# SEO (if needed)
+# wordpress-seo
+
+# Security (if needed)
+# wordfence
+
+# Performance (if needed)
+# wp-super-cache
+
+# Add any other required plugins below (one per line, no quotes)

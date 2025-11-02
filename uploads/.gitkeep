@@ -1,0 +1,12 @@
+# This file keeps the uploads directory in Git while ignoring all contents
+#
+# The uploads/ directory is where WordPress stores media files (images, videos, etc.)
+#
+# We keep this directory structure in Git but exclude all actual files via .gitignore
+# This ensures the directory exists when you clone the repo, but media files
+# are not tracked (they can be very large and change frequently)
+#
+# To backup/restore media files, use:
+# - rsync
+# - Cloud storage (S3, etc.)
+# - Separate backup scripts

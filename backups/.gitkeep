@@ -1,0 +1,6 @@
+# Backups Directory
+#
+# This directory is for database backups created by scripts/backup-db.sh
+#
+# All .sql and .sql.gz files in this directory are excluded from Git
+# Only this .gitkeep file is tracked to preserve the directory structure
