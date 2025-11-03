@@ -16,6 +16,19 @@ services:
       WORDPRESS_TABLE_PREFIX: ${DEV_WP_TABLE_PREFIX:-lmf_}
       WORDPRESS_DEBUG: ${DEV_WP_DEBUG:-1}
       WORDPRESS_CONFIG_EXTRA: |
+        define('WP_SITEURL', 'https://dev.3dmake.me');
+        define('WP_HOME', 'https://dev.3dmake.me');
+
+        // Handle HTTPS behind reverse proxy
+        if (isset($$_SERVER['HTTP_X_FORWARDED_PROTO']) && $$_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') {
+            $$_SERVER['HTTPS'] = 'on';
+        }
+
+        // Force correct port for reverse proxy
+        if (isset($$_SERVER['HTTP_X_FORWARDED_PORT'])) {
+            $$_SERVER['SERVER_PORT'] = $$_SERVER['HTTP_X_FORWARDED_PORT'];
+        }
+
         define('WP_DEBUG', true);
         define('WP_DEBUG_LOG', true);
         define('WP_DEBUG_DISPLAY', false);
