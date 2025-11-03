@@ -25,8 +25,10 @@ if [ ! -f .env ]; then
     read -p "Press Enter after you've updated .env file..."
 fi
 
-# Load environment variables
-export $(cat .env | grep -v '^#' | xargs)
+# Load environment variables safely
+set -a
+source .env
+set +a
 
 echo ""
 echo "🚀 Starting Docker containers..."

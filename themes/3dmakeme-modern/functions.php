@@ -89,7 +89,8 @@ add_action( 'wp_head', 'tdmakeme_related_products_grid_css', 999 );
 // Add price filter functionality
 add_action( 'pre_get_posts', 'tdmm_filter_products_by_price' );
 function tdmm_filter_products_by_price( $query ) {
-    if ( ! is_admin() && $query->is_main_query() && ( is_shop() || is_product_category() || is_product_tag() ) ) {
+    // Check if WooCommerce functions exist before using them
+    if ( ! is_admin() && $query->is_main_query() && function_exists( 'is_shop' ) && ( is_shop() || is_product_category() || is_product_tag() ) ) {
         
         $min_price = isset( $_GET['min_price'] ) ? floatval( $_GET['min_price'] ) : '';
         $max_price = isset( $_GET['max_price'] ) ? floatval( $_GET['max_price'] ) : '';
